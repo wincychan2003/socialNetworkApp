@@ -29,6 +29,11 @@ export default class Posts extends Component {
         });
     }
 
+    /**
+     * Get username by id of user from Users
+     * @param {*} data list of albums
+     * @param {*} users list of post item
+     */
     async getUserName(data, users) {
         return new Promise(resolve => {
             let posts = [];

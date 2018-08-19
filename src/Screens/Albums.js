@@ -27,6 +27,11 @@ export default class Albums extends Component {
         );
     }
 
+    /**
+     * Get username by id of user from Users
+     * @param {*} data list of albums
+     * @param {*} users list of users
+     */
     async getUserName(data, users) {
         return new Promise(resolve => {
             let posts = [];

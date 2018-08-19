@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
-import {Container, Content, Card, CardItem, Text, Body} from "native-base";
+import {Container, Content, Card, CardItem, Text, 
+    Body, Icon, Left} from "native-base";
 import axios from 'axios';
 import Settings from '../Configs/Settings'
 
@@ -52,7 +53,12 @@ export default class Comments extends Component {
                         </Body>
                     </CardItem>
                     <CardItem header bordered>
-                        <Text>{item.email}</Text>
+                        <Left>
+                            <Icon name="ios-person"/>
+                            <Body>
+                            <Text>{item.email}</Text>
+                            </Body>
+                        </Left>
                     </CardItem>
                 </Card>
             );
