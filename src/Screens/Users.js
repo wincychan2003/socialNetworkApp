@@ -2,6 +2,16 @@ import React, {Component} from 'react';
 import {Container, Content, Card, CardItem, Text, Body, Button, Left, Right, Icon} from "native-base";
 import axios from 'axios';
 
+/**
+ * Users is component to view all user in card item list,
+ * each user have buttons to view the detail of user and their todo list
+ *
+ * state:
+ *  users: list of user
+ *
+ * Author: Wincy Chan
+ */
+
 export default class Users extends Component {
 
     constructor(props) {

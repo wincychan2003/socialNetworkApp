@@ -2,6 +2,16 @@ import React, {Component} from 'react';
 import {Container, Content, Text, ListItem, Left, Right, Radio} from "native-base";
 import axios from 'axios';
 
+/**
+ * Todos is component to view each user todo list,
+ * each todo item have complete flag to indicate item status
+ *
+ * state:
+ *  data: list of todo item
+ *
+ * Author: Wincy Chan
+ */
+
 export default class Todos extends Component {
 
     constructor(props) {

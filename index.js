@@ -11,7 +11,6 @@ import {name as appName} from './app.json';
 import UserDetails from './src/Screens/UserDetails';
 import {createStackNavigator} from 'react-navigation';
 import {createBottomTabNavigator} from 'react-navigation';
-import {TabNavigator} from 'react-navigation';
 import React from 'react';
 import {Icon} from "native-base";
 

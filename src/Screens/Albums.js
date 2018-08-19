@@ -3,6 +3,14 @@ import {Container, Left, Icon, Content, Card, CardItem, Text, Body, Button} from
 import axios from 'axios';
 import _ from 'lodash';
 
+/**
+ * Albums is component to view all albums,
+ * 
+ * state:
+ *  data: list of albums
+ *
+ * Author: Wincy Chan
+ */
 export default class Albums extends Component {
 
     constructor(props) {

@@ -2,6 +2,14 @@ import React, {Component} from 'react';
 import {Container, Content, Card, CardItem, Text, Body} from "native-base";
 import axios from 'axios';
 
+/**
+ * Comments is component to view all Comments in list under post,
+ * 
+ * state:
+ *  comments: list of comments
+ *
+ * Author: Wincy Chan
+ */
 export default class Comments extends Component {
 
     constructor(props) {

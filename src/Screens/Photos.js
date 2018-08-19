@@ -3,6 +3,14 @@ import {Image} from 'react-native';
 import {Container, Content, Card, CardItem, Text, Body, Left} from "native-base";
 import axios from 'axios';
 
+/**
+ * Photos is component to view all phots in list under album,
+ * 
+ * state:
+ *  photos: list of photos
+ *
+ * Author: Wincy Chan
+ */
 export default class Photos extends Component {
 
     constructor(props) {

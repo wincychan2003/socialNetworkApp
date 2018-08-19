@@ -2,12 +2,21 @@ import React, {Component} from 'react';
 import {Container, Content, Card, CardItem, Text, Body, Left} from "native-base";
 import axios from 'axios';
 
+/**
+ * UserDetails is component to view each user information in detail,
+ * 
+ * state:
+ *  users: user information
+ *
+ * Author: Wincy Chan
+ */
+
 export default class UserDetails extends Component {
 
     constructor(props) {
         super(props);
         this.state = {
-            photos: []
+            user: []
         };
     }
 
@@ -20,7 +29,7 @@ export default class UserDetails extends Component {
     getUsers = (id) => {
         axios.get(`https://jsonplaceholder.typicode.com/users?id=${id}`)
             .then((response) => {
-                this.setState({photos: response.data});
+                this.setState({user: response.data});
             })
             .catch((error) => {
                 console.log(error);
@@ -28,7 +37,7 @@ export default class UserDetails extends Component {
     };
 
     renderContent() {
-        return this.state.photos.map((item) => {
+        return this.state.user.map((item) => {
             return (
                 <Card key={item.id}>
                     <CardItem header bordered>

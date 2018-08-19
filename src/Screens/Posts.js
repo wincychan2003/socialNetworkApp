@@ -3,6 +3,16 @@ import {Container, Content, Left, Card, CardItem, Text, Body, Button, Icon} from
 import axios from 'axios';
 import _ from 'lodash';
 
+/**
+ * Posts is component to view all post in list,
+ * each post have comment button to navigate comments component to view related 
+ * comments
+ *
+ * state:
+ *  data: list of comments
+ *
+ * Author: Wincy Chan
+ */
 export default class Posts extends Component {
 
     constructor(props) {
