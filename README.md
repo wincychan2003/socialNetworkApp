@@ -36,8 +36,3 @@ For iOS, run app using command
 ```
 react-native run-ios
 ```
-
-For Android, run app using command
-```
-react-native run-android
-```
