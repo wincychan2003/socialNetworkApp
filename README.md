@@ -1,5 +1,6 @@
 # socialNetworkApp
 This is simple social network app by using react native.
+This app using JSON APIs on https://jsonplaceholder.typicode.com/
 
 This app include three part: 
 - Posts
@@ -15,7 +16,11 @@ show list of albums, there is button to show related photos of album
 **User** 
 show list of users, there are two buttons to show related user information in detail and related user to-do list
 
-To start with, install all required node module by using command
+
+
+To start with, clone to the local environment socialNetworkApp
+
+install all required node module by using command
 
 ```
 npm install
