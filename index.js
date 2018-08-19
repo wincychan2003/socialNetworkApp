@@ -14,6 +14,19 @@ import {createBottomTabNavigator} from 'react-navigation';
 import React from 'react';
 import {Icon} from "native-base";
 
+/**
+ * This is simple social network app by using react native. This app include three part
+ * Posts: to show list of posts
+ * Albums: to show list of albums
+ * Users: to show list of users
+ * 
+ * This app is using react-navigation for navigation, 
+ * StackNavigator for detail page navigation
+ * BottomTabNavigator for bottom tab bar navigation
+ * 
+ * Author: Wincy Chan
+ */
+
 const BottomTabNavigator = createBottomTabNavigator(
     {
         Posts: {
