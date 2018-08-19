@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import {Container, Content, Text, ListItem, Left, Right, Radio} from "native-base";
 import axios from 'axios';
+import Settings from '../Configs/Settings'
 
 /**
  * Todos is component to view each user todo list,
@@ -28,7 +29,7 @@ export default class Todos extends Component {
     }
 
     getPosts = (id) => {
-        axios.get(`https://jsonplaceholder.typicode.com/todos?userId=${id}`)
+        axios.get(`${Settings.api_endpoint}/todos?userId=${id}`)
             .then((response) => {
                 this.setState({data: response.data});
             })

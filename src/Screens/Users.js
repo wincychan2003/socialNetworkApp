@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import {Container, Content, Card, CardItem, Text, Body, Button, Left, Right, Icon} from "native-base";
 import axios from 'axios';
+import Settings from '../Configs/Settings'
 
 /**
  * Users is component to view all user in card item list,
@@ -26,7 +27,7 @@ export default class Users extends Component {
     }
 
     getUsers = () => {
-        axios.get('https://jsonplaceholder.typicode.com/users')
+        axios.get(`${Settings.api_endpoint}/users`)
             .then((response) => {
                 this.setState({users: response.data});
             })

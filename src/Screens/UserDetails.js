@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import {Container, Content, Card, CardItem, Text, Body, Left} from "native-base";
 import axios from 'axios';
+import Settings from '../Configs/Settings'
 
 /**
  * UserDetails is component to view each user information in detail,
@@ -27,7 +28,7 @@ export default class UserDetails extends Component {
     }
 
     getUsers = (id) => {
-        axios.get(`https://jsonplaceholder.typicode.com/users?id=${id}`)
+        axios.get(`${Settings.api_endpoint}/users?id=${id}`)
             .then((response) => {
                 this.setState({user: response.data});
             })

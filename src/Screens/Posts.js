@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import {Container, Content, Left, Card, CardItem, Text, Body, Button, Icon} from "native-base";
 import axios from 'axios';
 import _ from 'lodash';
+import Settings from '../Configs/Settings'
 
 /**
  * Posts is component to view all post in list,
@@ -47,7 +48,7 @@ export default class Posts extends Component {
     }
 
     getPosts = (users) => {
-        axios.get('https://jsonplaceholder.typicode.com/posts')
+        axios.get(`${Settings.api_endpoint}/posts`)
             .then((response) => this.getUserName(response.data, users))
             .then((data) => {
                 this.setState({data});
@@ -59,7 +60,7 @@ export default class Posts extends Component {
 
     getUsers = async () => {
         return new Promise(resolve => {
-            axios.get('https://jsonplaceholder.typicode.com/users')
+            axios.get(`${Settings.api_endpoint}/users`)
                 .then((response) => {
                     resolve(response.data)
                 })

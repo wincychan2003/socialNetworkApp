@@ -2,12 +2,13 @@ import React, {Component} from 'react';
 import {Container, Left, Icon, Content, Card, CardItem, Text, Body, Button} from "native-base";
 import axios from 'axios';
 import _ from 'lodash';
+import Settings from '../Configs/Settings'
 
 /**
  * Albums is component to view all albums,
  * 
  * state:
- *  data: list of albums
+ *  data: list of album item
  *
  * Author: Wincy Chan
  */
@@ -45,7 +46,7 @@ export default class Albums extends Component {
     }
 
     getPosts = (users) => {
-        axios.get('https://jsonplaceholder.typicode.com/albums')
+        axios.get(`${Settings.api_endpoint}/albums`)
             .then((response) => this.getUserName(response.data, users))
             .then((data) => {
                 this.setState({data});
@@ -57,7 +58,7 @@ export default class Albums extends Component {
 
     getUsers = async () => {
         return new Promise(resolve => {
-            axios.get('https://jsonplaceholder.typicode.com/users')
+            axios.get(`${Settings.api_endpoint}/users`)
                 .then((response) => {
                     resolve(response.data)
 

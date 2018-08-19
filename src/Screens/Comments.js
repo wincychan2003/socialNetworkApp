@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import {Container, Content, Card, CardItem, Text, Body} from "native-base";
 import axios from 'axios';
+import Settings from '../Configs/Settings'
 
 /**
  * Comments is component to view all Comments in list under post,
@@ -27,7 +28,7 @@ export default class Comments extends Component {
 
 
     getUsers = (postId) => {
-        axios.get(`https://jsonplaceholder.typicode.com/comments?postId=${postId}`)
+        axios.get(`${Settings.api_endpoint}/comments?postId=${postId}`)
             .then((response) => {
                 this.setState({comments: response.data});
             })

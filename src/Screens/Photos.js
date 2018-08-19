@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import {Image} from 'react-native';
 import {Container, Content, Card, CardItem, Text, Body, Left} from "native-base";
 import axios from 'axios';
+import Settings from '../Configs/Settings'
 
 /**
  * Photos is component to view all phots in list under album,
@@ -27,7 +28,7 @@ export default class Photos extends Component {
     }
 
     getUsers = (albumId) => {
-        axios.get(`https://jsonplaceholder.typicode.com/photos?albumId=${albumId}`)
+        axios.get(`${Settings.api_endpoint}/photos?albumId=${albumId}`)
             .then((response) => {
                 this.setState({photos: response.data});
             })
