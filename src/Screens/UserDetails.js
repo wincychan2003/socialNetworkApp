@@ -1,144 +1,141 @@
 import React, {Component} from 'react';
-import { Platform, StyleSheet } from 'react-native';
-import { Container, Header, Content, Card, CardItem, Text, Body, Left, Thumbnail } from "native-base";
+import {Container, Content, Card, CardItem, Text, Body, Left} from "native-base";
 import axios from 'axios';
-import _ from 'lodash';
 
-export default class UserDetails extends Component{
+export default class UserDetails extends Component {
 
     constructor(props) {
         super(props);
         this.state = {
-          photos: []
+            photos: []
         };
-      }
-    
-      componentDidMount() {
+    }
+
+    componentDidMount() {
         const {navigation} = this.props;
         const id = navigation.getParam('id');
         this.getUsers(id);
-      }
-    
-      
-      getUsers = (id) => {
+    }
+
+    getUsers = (id) => {
         axios.get(`https://jsonplaceholder.typicode.com/users?id=${id}`)
-         .then((response) => {
-             console.log(response)
-          this.setState({photos: response.data});
-         })
-        .catch((error)=>{
-           console.log(error);
-        });
-      }
-    
-      renderButtons() {
+            .then((response) => {
+                console.log(response)
+                this.setState({photos: response.data});
+            })
+            .catch((error) => {
+                console.log(error);
+            });
+    };
+
+    renderButtons() {
         return this.state.photos.map((item) => {
             return (
-              <Card key={item.id}>
-              <CardItem header bordered>
-                <Text>{item.name}</Text>
-              </CardItem>
-              <CardItem>
-              <Left>
-                <Text>Username:</Text>
-              </Left>
-              <Body>
-              <Text>{item.username}</Text>
-              </Body>
-              </CardItem>
-              <CardItem>
-              <Left>
-                <Text>Email:</Text>
-              </Left>
-              <Body>
-                <Text>{item.email}</Text>
-              </Body>
-              </CardItem>
-              <CardItem>
-              <Left>
-                <Text>Address:</Text>
-              </Left>
-                <Body>
-                  <Text>
-                    {item.address.street}
-                  </Text>
-                  <Text>
-                    {item.address.suite}
-                  </Text>
-                  <Text>
-                    {item.address.city}
-                  </Text>
-                  <Text>
-                    {item.address.zipcode}
-                  </Text>
-                </Body>
-              </CardItem>
-              <CardItem>
-              <Left>
-                <Text>Phone:</Text>
-              </Left>
-              <Body>
-              <Text>{item.phone}</Text>
-              </Body>
-              </CardItem>
-              
-              <CardItem>
-              <Left>
-                <Text>Website:</Text>
-              </Left>
-              <Body>
-              <Text>{item.website}</Text>
-              </Body>
-              </CardItem>
-              <CardItem>
-              <Left>
-                <Text>Company Name:</Text>
-              </Left>
-                <Body>
-                  <Text>
-                    {item.company.name}
-                  </Text>
-                  <Text>
-                    {item.company.catchPhrase}
-                  </Text>
-                  <Text>
-                    {item.company.bs}
-                  </Text>
-                </Body>
-              </CardItem>
-              <CardItem>
-              <Left>
-                <Text>Company catchPhrase:</Text>
-              </Left>
-                <Body>
-                  <Text>
-                    {item.company.catchPhrase}
-                  </Text>
-                </Body>
-              </CardItem>
-              <CardItem>
-              <Left>
-                <Text>Company Business:</Text>
-              </Left>
-                <Body>
-                  <Text>
-                    {item.company.bs}
-                  </Text>
-                </Body>
-              </CardItem>
-            </Card>
+                <Card key={item.id}>
+                    <CardItem header bordered>
+                        <Text>{item.name}</Text>
+                    </CardItem>
+                    <CardItem>
+                        <Left>
+                            <Text>Username:</Text>
+                        </Left>
+                        <Body>
+                        <Text>{item.username}</Text>
+                        </Body>
+                    </CardItem>
+                    <CardItem>
+                        <Left>
+                            <Text>Email:</Text>
+                        </Left>
+                        <Body>
+                        <Text>{item.email}</Text>
+                        </Body>
+                    </CardItem>
+                    <CardItem>
+                        <Left>
+                            <Text>Address:</Text>
+                        </Left>
+                        <Body>
+                        <Text>
+                            {item.address.street}
+                        </Text>
+                        <Text>
+                            {item.address.suite}
+                        </Text>
+                        <Text>
+                            {item.address.city}
+                        </Text>
+                        <Text>
+                            {item.address.zipcode}
+                        </Text>
+                        </Body>
+                    </CardItem>
+                    <CardItem>
+                        <Left>
+                            <Text>Phone:</Text>
+                        </Left>
+                        <Body>
+                        <Text>{item.phone}</Text>
+                        </Body>
+                    </CardItem>
+
+                    <CardItem>
+                        <Left>
+                            <Text>Website:</Text>
+                        </Left>
+                        <Body>
+                        <Text>{item.website}</Text>
+                        </Body>
+                    </CardItem>
+                    <CardItem>
+                        <Left>
+                            <Text>Company Name:</Text>
+                        </Left>
+                        <Body>
+                        <Text>
+                            {item.company.name}
+                        </Text>
+                        <Text>
+                            {item.company.catchPhrase}
+                        </Text>
+                        <Text>
+                            {item.company.bs}
+                        </Text>
+                        </Body>
+                    </CardItem>
+                    <CardItem>
+                        <Left>
+                            <Text>Company Catch Phrase:</Text>
+                        </Left>
+                        <Body>
+                        <Text>
+                            {item.company.catchPhrase}
+                        </Text>
+                        </Body>
+                    </CardItem>
+                    <CardItem>
+                        <Left>
+                            <Text>Company Business:</Text>
+                        </Left>
+                        <Body>
+                        <Text>
+                            {item.company.bs}
+                        </Text>
+                        </Body>
+                    </CardItem>
+                </Card>
             );
         });
     }
-    
-      render() {
+
+    render() {
         return (
-          <Container>
-            <Content padder>
-                {this.renderButtons()}
-            </Content>
-          </Container>
+            <Container>
+                <Content padder>
+                    {this.renderButtons()}
+                </Content>
+            </Container>
         );
-      }
-    
+    }
+
 }
