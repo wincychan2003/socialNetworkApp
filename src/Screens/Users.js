@@ -25,7 +25,7 @@ export default class Users extends Component {
             });
     };
 
-    renderButtons() {
+    renderContents() {
         return this.state.users.map((item) => {
             return (
                 <Card key={item.id}>
@@ -63,7 +63,7 @@ export default class Users extends Component {
         return (
             <Container>
                 <Content padder>
-                    {this.renderButtons()}
+                    {this.renderContents()}
                 </Content>
             </Container>
         );

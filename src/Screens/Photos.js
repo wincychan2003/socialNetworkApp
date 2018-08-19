@@ -28,7 +28,7 @@ export default class Photos extends Component {
             });
     };
 
-    renderButtons() {
+    renderContents() {
         return this.state.photos.map((item) => {
             return (
                 <Card key={item.id}>
@@ -51,7 +51,7 @@ export default class Photos extends Component {
         return (
             <Container>
                 <Content padder>
-                    {this.renderButtons()}
+                    {this.renderContents()}
                 </Content>
             </Container>
         );

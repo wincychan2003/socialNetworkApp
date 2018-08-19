@@ -27,7 +27,7 @@ export default class Todos extends Component {
             });
     };
 
-    renderButtons() {
+    renderContents() {
         return this.state.data.map((item) => {
             return (
                 <ListItem key={item.id} selected={true}>
@@ -50,7 +50,7 @@ export default class Todos extends Component {
         return (
             <Container>
                 <Content padder>
-                    {this.renderButtons()}
+                    {this.renderContents()}
                 </Content>
             </Container>
         );

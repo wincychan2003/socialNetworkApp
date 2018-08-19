@@ -87,7 +87,7 @@ export default class App extends Component<Props> {
     });
   }
 
-  renderButtons() {
+  renderContents() {
     return this.state.data.map((item) => {
         return (
           <Card key={item.id}>
@@ -114,7 +114,7 @@ export default class App extends Component<Props> {
       <Container>
         <Header />
         <Content padder>
-            {/* {this.renderButtons()} */}
+            {/* {this.renderContents()} */}
             <RootStack/>
         </Content>
       </Container>
