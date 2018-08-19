@@ -1,5 +1,5 @@
 # socialNetworkApp
-This is simple social network app by using react native.
+This is simple social network app by using react native with nativebase.
 This app using JSON APIs on https://jsonplaceholder.typicode.com/
 
 This app include three part: 

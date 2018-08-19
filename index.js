@@ -15,7 +15,9 @@ import React from 'react';
 import {Icon} from "native-base";
 
 /**
- * This is simple social network app by using react native. This app include three part
+ * This is simple social network app by using react native with nativebase. 
+ * This app include three part:
+ * 
  * Posts: to show list of posts
  * Albums: to show list of albums
  * Users: to show list of users
@@ -66,12 +68,40 @@ const RootStack = createStackNavigator(
     {
         Main: BottomTabNavigator,
         Posts: Posts,
-        Comments: Comments,
+        Comments: {
+            screen: Comments,
+
+            // Optional: Override the `navigationOptions` for the screen
+            navigationOptions: ({ navigation }) => ({
+                title: `Comments`,
+              }),
+        },
         Albums: Albums,
-        Photos: Photos,
+        Photos: {
+            screen: Photos,
+
+            // Optional: Override the `navigationOptions` for the screen
+            navigationOptions: ({ navigation }) => ({
+                title: `Photos`,
+              }),
+        },
         Users: Users,
-        UserDetails: UserDetails,
-        Todos: Todos
+        UserDetails: {
+            screen: UserDetails,
+
+            // Optional: Override the `navigationOptions` for the screen
+            navigationOptions: ({ navigation }) => ({
+                title: `User Detail`,
+              }),
+        },
+        Todos: {
+            screen: Todos,
+
+            // Optional: Override the `navigationOptions` for the screen
+            navigationOptions: ({ navigation }) => ({
+                title: `To-do list`,
+              }),
+        }
     },
     {
         initialRouteName: 'Main',
