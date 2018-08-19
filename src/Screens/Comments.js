@@ -28,7 +28,7 @@ export default class Comments extends Component {
             });
     };
 
-    renderContents() {
+    renderContent() {
         return this.state.comments.map((item) => {
             return (
                 <Card key={item.id}>
@@ -54,7 +54,7 @@ export default class Comments extends Component {
         return (
             <Container>
                 <Content padder>
-                    {this.renderContents()}
+                    {this.renderContent()}
                 </Content>
             </Container>
         );

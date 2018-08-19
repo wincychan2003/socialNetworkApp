@@ -1,7 +1,6 @@
 /** @format */
 
 import {AppRegistry} from 'react-native';
-import App from './App';
 import Posts from './src/Screens/Posts';
 import Albums from './src/Screens/Albums';
 import Photos from './src/Screens/Photos';
@@ -10,11 +9,11 @@ import Users from './src/Screens/Users';
 import Todos from './src/Screens/Todos';
 import {name as appName} from './app.json';
 import UserDetails from './src/Screens/UserDetails';
-import { createStackNavigator } from 'react-navigation';
-import { createBottomTabNavigator } from 'react-navigation';
-import { TabNavigator } from 'react-navigation';
+import {createStackNavigator} from 'react-navigation';
+import {createBottomTabNavigator} from 'react-navigation';
+import {TabNavigator} from 'react-navigation';
 import React from 'react';
-import { Icon } from "native-base";
+import {Icon} from "native-base";
 
 const BottomTabNavigator = createBottomTabNavigator(
     {
@@ -25,30 +24,30 @@ const BottomTabNavigator = createBottomTabNavigator(
             screen: Albums
         },
         Users: {
-            screen: Users   
+            screen: Users
         }
     },
     {
-        navigationOptions: ({ navigation }) => ({
-          tabBarIcon: ({ focused, tintColor }) => {
-            const { routeName } = navigation.state;
-            let iconName;
-            if (routeName === 'Posts') {
-              iconName = `ios-paper${focused ? '' : '-outline'}`;
-            } else if (routeName === 'Albums') {
-              iconName = `ios-albums${focused ? '' : '-outline'}`;
-            }
-            else if (routeName === 'Users') {
-                iconName = `ios-contacts${focused ? '' : '-outline'}`;
-            }
-            return <Icon name={iconName} />;
-          },
+        navigationOptions: ({navigation}) => ({
+            tabBarIcon: ({focused, tintColor}) => {
+                const {routeName} = navigation.state;
+                let iconName;
+                if (routeName === 'Posts') {
+                    iconName = `ios-paper${focused ? '' : '-outline'}`;
+                } else if (routeName === 'Albums') {
+                    iconName = `ios-albums${focused ? '' : '-outline'}`;
+                }
+                else if (routeName === 'Users') {
+                    iconName = `ios-contacts${focused ? '' : '-outline'}`;
+                }
+                return <Icon name={iconName}/>;
+            },
         }),
         tabBarOptions: {
-          activeTintColor: '#007aff',   //blue
-          inactiveTintColor: 'gray',
+            activeTintColor: '#007aff',   //blue
+            inactiveTintColor: 'gray',
         },
-      }
+    }
 );
 
 const RootStack = createStackNavigator(
@@ -63,7 +62,7 @@ const RootStack = createStackNavigator(
         Todos: Todos
     },
     {
-      initialRouteName: 'Main',
+        initialRouteName: 'Main',
     },
 );
 AppRegistry.registerComponent(appName, () => RootStack);

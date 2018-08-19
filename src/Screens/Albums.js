@@ -60,7 +60,7 @@ export default class Albums extends Component {
         });
     };
 
-    renderContents() {
+    renderContent() {
         return this.state.data.map((item) => {
             return (
                 <Card key={item.id}>
@@ -88,7 +88,7 @@ export default class Albums extends Component {
         return (
             <Container>
                 <Content padder>
-                    {this.renderContents()}
+                    {this.renderContent()}
                 </Content>
             </Container>
         );
