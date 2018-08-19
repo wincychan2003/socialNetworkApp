@@ -23,7 +23,6 @@ export default class Comments extends Component{
       getUsers = (postId) => {
         axios.get(`https://jsonplaceholder.typicode.com/comments?postId=${postId}`)
          .then((response) => {
-             console.log(response)
           this.setState({comments: response.data});
          })
         .catch((error)=>{

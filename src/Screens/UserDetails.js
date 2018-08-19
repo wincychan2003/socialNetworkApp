@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import { Platform, StyleSheet } from 'react-native';
-import { Container, Header, Content, Card, CardItem, Text, Body, Thumbnail } from "native-base";
+import { Container, Header, Content, Card, CardItem, Text, Body, Left, Thumbnail } from "native-base";
 import axios from 'axios';
 import _ from 'lodash';
 
@@ -36,15 +36,28 @@ export default class UserDetails extends Component{
             return (
               <Card key={item.id}>
               <CardItem header bordered>
-                <Text>Name: {item.name}</Text>
+                <Text>{item.name}</Text>
               </CardItem>
-              <CardItem header bordered>
-                <Text>Username: {item.username}</Text>
+              <CardItem>
+              <Left>
+                <Text>Username:</Text>
+              </Left>
+              <Body>
+              <Text>{item.username}</Text>
+              </Body>
               </CardItem>
-              <CardItem header bordered>
-                <Text>Email: {item.email}</Text>
+              <CardItem>
+              <Left>
+                <Text>Email:</Text>
+              </Left>
+              <Body>
+                <Text>{item.email}</Text>
+              </Body>
               </CardItem>
-              <CardItem bordered>
+              <CardItem>
+              <Left>
+                <Text>Address:</Text>
+              </Left>
                 <Body>
                   <Text>
                     {item.address.street}
@@ -60,14 +73,27 @@ export default class UserDetails extends Component{
                   </Text>
                 </Body>
               </CardItem>
-              <CardItem header bordered>
-                <Text>{item.phone}</Text>
+              <CardItem>
+              <Left>
+                <Text>Phone:</Text>
+              </Left>
+              <Body>
+              <Text>{item.phone}</Text>
+              </Body>
               </CardItem>
               
-              <CardItem header bordered>
-                <Text>{item.website}</Text>
+              <CardItem>
+              <Left>
+                <Text>Website:</Text>
+              </Left>
+              <Body>
+              <Text>{item.website}</Text>
+              </Body>
               </CardItem>
-              <CardItem bordered>
+              <CardItem>
+              <Left>
+                <Text>Company Name:</Text>
+              </Left>
                 <Body>
                   <Text>
                     {item.company.name}
@@ -75,6 +101,26 @@ export default class UserDetails extends Component{
                   <Text>
                     {item.company.catchPhrase}
                   </Text>
+                  <Text>
+                    {item.company.bs}
+                  </Text>
+                </Body>
+              </CardItem>
+              <CardItem>
+              <Left>
+                <Text>Company catchPhrase:</Text>
+              </Left>
+                <Body>
+                  <Text>
+                    {item.company.catchPhrase}
+                  </Text>
+                </Body>
+              </CardItem>
+              <CardItem>
+              <Left>
+                <Text>Company Business:</Text>
+              </Left>
+                <Body>
                   <Text>
                     {item.company.bs}
                   </Text>
