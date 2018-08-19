@@ -14,14 +14,13 @@ export default class Photos extends Component {
 
     componentDidMount() {
         const {navigation} = this.props;
-        const albumId = navigation.getParam('albumId')
+        const albumId = navigation.getParam('albumId');
         this.getUsers(albumId);
     }
 
     getUsers = (albumId) => {
         axios.get(`https://jsonplaceholder.typicode.com/photos?albumId=${albumId}`)
             .then((response) => {
-                console.log(response)
                 this.setState({photos: response.data});
             })
             .catch((error) => {

@@ -13,7 +13,7 @@ export default class Comments extends Component {
 
     componentDidMount() {
         const {navigation} = this.props;
-        const postId = navigation.getParam('postId')
+        const postId = navigation.getParam('postId');
         this.getUsers(postId);
     }
 

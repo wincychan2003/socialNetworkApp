@@ -18,7 +18,6 @@ export default class Users extends Component {
     getUsers = () => {
         axios.get('https://jsonplaceholder.typicode.com/users')
             .then((response) => {
-                console.log(response)
                 this.setState({users: response.data});
             })
             .catch((error) => {

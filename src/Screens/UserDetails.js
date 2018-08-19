@@ -20,7 +20,6 @@ export default class UserDetails extends Component {
     getUsers = (id) => {
         axios.get(`https://jsonplaceholder.typicode.com/users?id=${id}`)
             .then((response) => {
-                console.log(response)
                 this.setState({photos: response.data});
             })
             .catch((error) => {
